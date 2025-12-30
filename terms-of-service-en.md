@@ -1,6 +1,6 @@
 # Terms of Service
 
-**Last updated: December 30, 2024**
+**Last updated: December 30, 2025**
 
 Welcome to Gymeal. By using our application, you agree to these terms of service.
 

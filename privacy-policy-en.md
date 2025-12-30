@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated: December 30, 2024**
+**Last updated: December 30, 2025**
 
 Gymeal is a nutrition and workout tracking application developed by Yohann F&eacute;licit&eacute; ("we", "our", "us"). This privacy policy explains how we collect, use, and protect your personal data.
 

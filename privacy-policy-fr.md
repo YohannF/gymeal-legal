@@ -1,6 +1,6 @@
 # Politique de Confidentialit&eacute;
 
-**Derni&egrave;re mise &agrave; jour : 30 d&eacute;cembre 2024**
+**Derni&egrave;re mise &agrave; jour : 30 d&eacute;cembre 2025**
 
 Gymeal est une application de suivi nutritionnel et d'entra&icirc;nement d&eacute;velopp&eacute;e par Yohann F&eacute;licit&eacute; ("nous", "notre", "nos"). Cette politique de confidentialit&eacute; explique comment nous collectons, utilisons et prot&eacute;geons vos donn&eacute;es personnelles.
 

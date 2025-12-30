@@ -1,6 +1,6 @@
 # Conditions G&eacute;n&eacute;rales d'Utilisation
 
-**Derni&egrave;re mise &agrave; jour : 30 d&eacute;cembre 2024**
+**Derni&egrave;re mise &agrave; jour : 30 d&eacute;cembre 2025**
 
 Bienvenue sur Gymeal. En utilisant notre application, vous acceptez ces conditions d'utilisation.
 
