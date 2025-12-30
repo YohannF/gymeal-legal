@@ -4,61 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Gymeal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
+            --bg: #000000;
+            --card: #1A1A1C;
+            --card-elevated: #222224;
             --accent: #FF4848;
-            --accent-glow: rgba(255, 72, 72, 0.4);
-            --bg-primary: #000000;
-            --bg-card: #0D0D0E;
-            --bg-elevated: #141416;
             --text-primary: #FFFFFF;
-            --text-secondary: rgba(255, 255, 255, 0.7);
-            --text-tertiary: rgba(255, 255, 255, 0.5);
-            --border: rgba(255, 255, 255, 0.1);
-            --warning-bg: rgba(255, 193, 7, 0.1);
-            --warning-border: #FFC107;
+            --text-secondary: #B3B3B3;
+            --text-tertiary: #666666;
+            --border: #2A2A2C;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, sans-serif;
+            background: var(--bg);
             color: var(--text-primary);
             line-height: 1.7;
-            position: relative;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        body::before {
-            content: '';
+        header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 40px,
-                rgba(255, 72, 72, 0.02) 40px,
-                rgba(255, 72, 72, 0.02) 80px
-            );
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .header {
-            position: sticky;
-            top: 0;
             z-index: 100;
-            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 1.5rem;
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            padding: 16px 24px;
         }
 
         .header-content {
@@ -69,400 +57,387 @@
             justify-content: space-between;
         }
 
-        .back-link {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: var(--text-secondary);
+            gap: 0.5rem;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover { color: var(--accent); }
-        .back-link svg { width: 16px; height: 16px; }
-
-        .header-logo {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
             color: var(--text-primary);
         }
 
-        .container {
-            position: relative;
-            z-index: 1;
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        main {
             max-width: 800px;
             margin: 0 auto;
-            padding: 48px 24px 80px;
+            padding: 8rem 1.5rem 4rem;
         }
 
         .hero {
-            text-align: center;
-            margin-bottom: 48px;
-            padding-bottom: 48px;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid var(--border);
         }
 
         .hero h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 2.75rem);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 16px;
-            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.7) 100%);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .updated {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            font-size: 0.85rem;
+        .hero .updated {
             color: var(--text-tertiary);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .updated::before {
+        .hero .updated::before {
             content: '';
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: var(--accent);
             border-radius: 50%;
         }
 
-        .intro {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            padding: 24px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border-left: 4px solid var(--accent);
+        .content {
+            animation: fadeIn 0.6s ease-out;
         }
 
-        section { margin-bottom: 40px; }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-        h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
+        .content h2 {
+            font-size: 1.375rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            margin: 2.5rem 0 1rem;
             color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 0.75rem;
         }
 
-        h2::before {
+        .content h2::before {
             content: '';
-            width: 4px;
-            height: 24px;
+            width: 3px;
+            height: 1.25em;
             background: var(--accent);
             border-radius: 2px;
         }
 
-        h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 24px;
-            margin-bottom: 12px;
+        .content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .content p {
             color: var(--text-secondary);
+            margin-bottom: 1rem;
         }
 
-        p {
+        .content ul, .content ol {
             color: var(--text-secondary);
-            margin-bottom: 16px;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
         }
 
-        ul {
-            list-style: none;
-            margin-bottom: 20px;
+        .content li {
+            margin-bottom: 0.5rem;
         }
 
-        li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 12px;
-            color: var(--text-secondary);
+        .content li::marker {
+            color: var(--accent);
         }
 
-        li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 8px;
-            height: 2px;
-            background: var(--accent);
-        }
-
-        strong {
+        .content strong {
             color: var(--text-primary);
             font-weight: 600;
         }
 
-        a {
+        .content a {
             color: var(--accent);
             text-decoration: none;
-            transition: opacity 0.2s;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
         }
 
-        a:hover { opacity: 0.8; }
-
-        .important {
-            background: var(--warning-bg);
-            border-left: 4px solid var(--warning-border);
-            padding: 20px 24px;
-            margin: 20px 0;
-            border-radius: 0 12px 12px 0;
+        .content a:hover {
+            border-bottom-color: var(--accent);
         }
 
-        .important strong { color: var(--warning-border); }
+        .info-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
 
-        .card {
-            background: var(--bg-card);
+        .info-card.highlight {
+            border-left: 3px solid var(--accent);
+        }
+
+        .contact-card {
+            background: var(--card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 24px;
-            margin: 20px 0;
-        }
-
-        .footer {
-            margin-top: 64px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
+            padding: 2rem;
+            margin-top: 3rem;
             text-align: center;
         }
 
-        .footer p {
-            font-size: 0.9rem;
-            color: var(--text-tertiary);
-            font-style: italic;
+        .contact-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
         }
 
-        .footer .copyright {
-            margin-top: 24px;
-            padding-top: 24px;
+        .contact-card p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 1.125rem;
+        }
+
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
             border-top: 1px solid var(--border);
-            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; letter-spacing: 2px; }
-            h2 { font-size: 1.25rem; }
-            .container { padding: 32px 16px 60px; }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .copyright {
+            color: var(--text-tertiary);
+            font-size: 0.8125rem;
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding-top: 6rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .content h2 {
+                font-size: 1.25rem;
+            }
+
+            .footer-links {
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <header>
         <div class="header-content">
-            <a href="index.html" class="back-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Back
+            <a href="index.html" class="logo">
+                <div class="logo-mark">G</div>
+                <span class="logo-text">Gymeal</span>
             </a>
-            <span class="header-logo">Gymeal</span>
+            <a href="privacy-en.html" class="nav-link">Privacy Policy</a>
         </div>
     </header>
 
-    <div class="container">
+    <main>
         <div class="hero">
             <h1>Terms of Service</h1>
-            <span class="updated">Last updated: December 30, 2025</span>
+            <p class="updated">Last updated: December 30, 2025</p>
         </div>
 
-        <p class="intro">
-            Welcome to Gymeal. By using our application, you agree to these terms of service.
-        </p>
+        <div class="content">
+            <section>
+                <h2>Agreement to Terms</h2>
+                <p>By downloading, installing, or using Gymeal ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</p>
 
-        <section>
-            <h2>1. Acceptance of Terms</h2>
-            <p>By downloading, installing, or using Gymeal, you agree to be bound by these terms. If you do not accept these terms, do not use the application.</p>
-        </section>
+                <div class="info-card highlight">
+                    <p><strong>Important:</strong> You must be at least 13 years old to use Gymeal. By using the App, you confirm that you meet this age requirement.</p>
+                </div>
+            </section>
 
-        <section>
-            <h2>2. Service Description</h2>
-            <p>Gymeal is an application for:</p>
-            <ul>
-                <li>Nutrition tracking (meals, calories, macronutrients)</li>
-                <li>Workout tracking (exercises, sessions, progression)</li>
-                <li>Apple HealthKit synchronization (optional)</li>
-                <li>Voice and photo meal analysis (premium features)</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>3. User Account</h2>
-
-            <div class="card">
-                <h3>3.1 Account Creation</h3>
+            <section>
+                <h2>Description of Service</h2>
+                <p>Gymeal is a nutrition and fitness tracking application that allows you to:</p>
                 <ul>
-                    <li>You must provide a valid email address</li>
-                    <li>You are responsible for keeping your password confidential</li>
-                    <li>You must be at least 13 years old to use the application</li>
+                    <li>Log and track meals and nutritional intake</li>
+                    <li>Record workout sessions and exercises</li>
+                    <li>Monitor body measurements and progress</li>
+                    <li>Set and track fitness and nutrition goals</li>
+                    <li>Sync data with Apple HealthKit (optional)</li>
+                    <li>Use AI-powered features for meal logging (premium)</li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="card">
-                <h3>3.2 Account Responsibility</h3>
+            <section>
+                <h2>User Accounts</h2>
+                <p>To use Gymeal, you must create an account. You are responsible for:</p>
                 <ul>
-                    <li>You are responsible for all activities under your account</li>
-                    <li>Notify us immediately of any unauthorized use</li>
+                    <li>Providing accurate and complete registration information</li>
+                    <li>Maintaining the security of your account credentials</li>
+                    <li>All activities that occur under your account</li>
+                    <li>Notifying us immediately of any unauthorized use</li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="card">
-                <h3>3.3 Account Deletion</h3>
+            <section>
+                <h2>Acceptable Use</h2>
+                <p>You agree not to:</p>
                 <ul>
-                    <li>You can delete your account at any time from the application</li>
-                    <li>Deletion results in permanent loss of all your data</li>
+                    <li>Use the App for any illegal purpose</li>
+                    <li>Attempt to gain unauthorized access to the App or its systems</li>
+                    <li>Interfere with the proper functioning of the App</li>
+                    <li>Upload malicious code or content</li>
+                    <li>Impersonate another person or entity</li>
+                    <li>Use the App to harass, abuse, or harm others</li>
+                    <li>Reverse engineer or decompile the App</li>
                 </ul>
+            </section>
+
+            <section>
+                <h2>Premium Features & Subscriptions</h2>
+                <p>Gymeal offers premium features through in-app purchases:</p>
+                <ul>
+                    <li>Voice-powered meal logging</li>
+                    <li>Photo-based calorie estimation</li>
+                    <li>Advanced analytics and insights</li>
+                </ul>
+                <p>Subscriptions are managed through Apple's App Store. Refunds and cancellations are subject to Apple's policies.</p>
+            </section>
+
+            <section>
+                <h2>Health Disclaimer</h2>
+                <div class="info-card highlight">
+                    <p><strong>Gymeal is not a medical device.</strong> The nutritional information, calorie estimates, and fitness tracking provided are for informational purposes only and should not be considered medical advice.</p>
+                </div>
+                <p>Always consult with a qualified healthcare professional before:</p>
+                <ul>
+                    <li>Starting any diet or nutrition program</li>
+                    <li>Beginning a new exercise routine</li>
+                    <li>Making decisions about your health based on App data</li>
+                </ul>
+                <p>AI-powered calorie estimates are approximations and may not be accurate for all foods.</p>
+            </section>
+
+            <section>
+                <h2>Intellectual Property</h2>
+                <p>The App, including its design, code, graphics, and content, is owned by Gymeal and protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without our permission.</p>
+            </section>
+
+            <section>
+                <h2>Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law:</p>
+                <ul>
+                    <li>The App is provided "as is" without warranties of any kind</li>
+                    <li>We are not liable for any indirect, incidental, or consequential damages</li>
+                    <li>Our total liability is limited to the amount you paid for the App</li>
+                    <li>We are not responsible for data loss due to device failure or user error</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Termination</h2>
+                <p>We may suspend or terminate your access to the App at any time for violation of these Terms. You may delete your account at any time through the App's settings. Upon termination, your right to use the App ceases immediately.</p>
+            </section>
+
+            <section>
+                <h2>Changes to Terms</h2>
+                <p>We may update these Terms from time to time. We will notify you of material changes through the App. Continued use after changes constitutes acceptance of the new Terms.</p>
+            </section>
+
+            <section>
+                <h2>Governing Law</h2>
+                <p>These Terms are governed by the laws of France. Any disputes will be resolved in the courts of France.</p>
+            </section>
+
+            <div class="contact-card">
+                <h3>Questions?</h3>
+                <p>If you have any questions about these Terms of Service, please contact us:</p>
+                <a href="mailto:music.music.music5@icloud.com" class="contact-email">
+                    music.music.music5@icloud.com
+                </a>
             </div>
-        </section>
-
-        <section>
-            <h2>4. Premium Features and In-App Purchases</h2>
-
-            <h3>4.1 Free Features</h3>
-            <ul>
-                <li>Manual nutrition tracking</li>
-                <li>Complete workout tracking</li>
-                <li>Barcode scanning</li>
-                <li>HealthKit synchronization</li>
-            </ul>
-
-            <h3>4.2 Premium Features</h3>
-            <p>Some features require a purchase:</p>
-            <ul>
-                <li>Voice meal analysis</li>
-                <li>Photo calorie estimation</li>
-            </ul>
-
-            <h3>4.3 Payments</h3>
-            <ul>
-                <li>Purchases are processed by Apple through the App Store</li>
-                <li>Prices are displayed in your local currency</li>
-                <li>Subscriptions renew automatically unless cancelled</li>
-            </ul>
-
-            <h3>4.4 Refunds</h3>
-            <ul>
-                <li>Refund requests must be addressed to Apple</li>
-                <li>We cannot process refunds directly</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>5. Acceptable Use</h2>
-            <p>You agree to:</p>
-            <ul>
-                <li>Use the application in compliance with applicable laws</li>
-                <li>Not attempt to bypass security measures</li>
-                <li>Not use the application for illegal purposes</li>
-                <li>Not share your account with others</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>6. User Content</h2>
-
-            <h3>6.1 Your Data</h3>
-            <ul>
-                <li>You retain ownership of your data (meals, workouts, etc.)</li>
-                <li>You grant us a limited license to store and process your data</li>
-            </ul>
-
-            <h3>6.2 Data Accuracy</h3>
-            <ul>
-                <li>You are responsible for the accuracy of data you enter</li>
-                <li>Nutritional estimates are provided for informational purposes</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>7. Health Disclaimer</h2>
-            <div class="important">
-                <strong>Important:</strong> Gymeal is a tracking tool and does not constitute medical advice.
-            </div>
-            <ul>
-                <li>Consult a healthcare professional before changing your diet or exercise program</li>
-                <li>Nutritional information is estimated and may vary</li>
-                <li>The application does not diagnose, treat, or prevent any disease</li>
-                <li>If you have health concerns, consult a doctor</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>8. Intellectual Property</h2>
-            <ul>
-                <li>Gymeal and its content are protected by copyright</li>
-                <li>Nutritional data comes from public databases</li>
-                <li>You may not copy, modify, or distribute the application</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>9. Limitation of Liability</h2>
-            <p>To the extent permitted by law:</p>
-            <ul>
-                <li>The application is provided "as is"</li>
-                <li>We do not guarantee the accuracy of nutritional data</li>
-                <li>We are not responsible for decisions made based on the application</li>
-                <li>Our liability is limited to the amount you have paid</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>10. Changes</h2>
-            <ul>
-                <li>We may modify these terms at any time</li>
-                <li>Significant changes will be notified in the application</li>
-                <li>Continued use after modification constitutes acceptance</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>11. Termination</h2>
-            <p>We may suspend or terminate your access if:</p>
-            <ul>
-                <li>You violate these terms</li>
-                <li>You misuse the application</li>
-                <li>Required by law</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>12. Governing Law</h2>
-            <p>These terms are governed by French law. Any dispute will be subject to the competent courts of Paris, France.</p>
-        </section>
-
-        <section>
-            <h2>13. Contact</h2>
-            <p><strong>Yohann Félicité</strong><br>
-            Email: <a href="mailto:feliciteyohann@gmail.com">feliciteyohann@gmail.com</a></p>
-        </section>
-
-        <div class="footer">
-            <p>By using Gymeal, you acknowledge that you have read and accepted these terms.</p>
-            <p class="copyright">&copy; 2025 Gymeal. All rights reserved.</p>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-en.html">Privacy Policy</a>
+            <a href="terms-en.html">Terms of Service</a>
+            <a href="terms-fr.html">Français</a>
+        </div>
+        <p class="copyright">© 2025 Gymeal. All rights reserved.</p>
+    </footer>
 </body>
 </html>

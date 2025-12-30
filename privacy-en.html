@@ -4,62 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Gymeal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
+            --bg: #000000;
+            --card: #1A1A1C;
+            --card-elevated: #222224;
             --accent: #FF4848;
-            --accent-glow: rgba(255, 72, 72, 0.4);
-            --bg-primary: #000000;
-            --bg-card: #0D0D0E;
-            --bg-elevated: #141416;
             --text-primary: #FFFFFF;
-            --text-secondary: rgba(255, 255, 255, 0.7);
-            --text-tertiary: rgba(255, 255, 255, 0.5);
-            --border: rgba(255, 255, 255, 0.1);
-            --warning-bg: rgba(255, 193, 7, 0.1);
-            --warning-border: #FFC107;
+            --text-secondary: #B3B3B3;
+            --text-tertiary: #666666;
+            --border: #2A2A2C;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, sans-serif;
+            background: var(--bg);
             color: var(--text-primary);
             line-height: 1.7;
-            position: relative;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Diagonal stripes background pattern */
-        body::before {
-            content: '';
+        /* Header */
+        header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 40px,
-                rgba(255, 72, 72, 0.02) 40px,
-                rgba(255, 72, 72, 0.02) 80px
-            );
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .header {
-            position: sticky;
-            top: 0;
             z-index: 100;
-            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 1.5rem;
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            padding: 16px 24px;
         }
 
         .header-content {
@@ -70,393 +58,401 @@
             justify-content: space-between;
         }
 
-        .back-link {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: var(--text-secondary);
+            gap: 0.5rem;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--accent);
-        }
-
-        .back-link svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .header-logo {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
             color: var(--text-primary);
         }
 
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 48px 24px 80px;
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: -0.5px;
         }
 
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 1.5rem 4rem;
+        }
+
+        /* Hero */
         .hero {
-            text-align: center;
-            margin-bottom: 48px;
-            padding-bottom: 48px;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid var(--border);
         }
 
         .hero h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 2.75rem);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 16px;
-            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.7) 100%);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .updated {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            font-size: 0.85rem;
+        .hero .updated {
             color: var(--text-tertiary);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .updated::before {
+        .hero .updated::before {
             content: '';
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: var(--accent);
             border-radius: 50%;
         }
 
-        .intro {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            padding: 24px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border-left: 4px solid var(--accent);
+        /* Content */
+        .content {
+            animation: fadeIn 0.6s ease-out;
         }
 
-        section {
-            margin-bottom: 40px;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
+        .content h2 {
+            font-size: 1.375rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            margin: 2.5rem 0 1rem;
             color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 0.75rem;
         }
 
-        h2::before {
+        .content h2::before {
             content: '';
-            width: 4px;
-            height: 24px;
+            width: 3px;
+            height: 1.25em;
             background: var(--accent);
             border-radius: 2px;
         }
 
-        h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 24px;
-            margin-bottom: 12px;
+        .content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .content p {
             color: var(--text-secondary);
+            margin-bottom: 1rem;
         }
 
-        p {
+        .content ul, .content ol {
             color: var(--text-secondary);
-            margin-bottom: 16px;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
         }
 
-        ul {
-            list-style: none;
-            margin-bottom: 20px;
+        .content li {
+            margin-bottom: 0.5rem;
         }
 
-        li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 12px;
-            color: var(--text-secondary);
+        .content li::marker {
+            color: var(--accent);
         }
 
-        li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 8px;
-            height: 2px;
-            background: var(--accent);
-        }
-
-        strong {
+        .content strong {
             color: var(--text-primary);
             font-weight: 600;
         }
 
-        a {
+        .content a {
             color: var(--accent);
             text-decoration: none;
-            transition: opacity 0.2s;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
         }
 
-        a:hover {
-            opacity: 0.8;
+        .content a:hover {
+            border-bottom-color: var(--accent);
         }
 
-        .important {
-            background: var(--warning-bg);
-            border-left: 4px solid var(--warning-border);
-            padding: 20px 24px;
-            margin: 20px 0;
-            border-radius: 0 12px 12px 0;
+        /* Info Card */
+        .info-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
         }
 
-        .important strong {
-            color: var(--warning-border);
+        .info-card.highlight {
+            border-left: 3px solid var(--accent);
         }
 
-        .card {
-            background: var(--bg-card);
+        /* Contact Section */
+        .contact-card {
+            background: var(--card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 24px;
-            margin: 20px 0;
-        }
-
-        .footer {
-            margin-top: 64px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
+            padding: 2rem;
+            margin-top: 3rem;
             text-align: center;
         }
 
-        .footer p {
-            font-size: 0.9rem;
-            color: var(--text-tertiary);
-            font-style: italic;
+        .contact-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
         }
 
-        .footer .copyright {
-            margin-top: 24px;
-            padding-top: 24px;
+        .contact-card p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 1.125rem;
+        }
+
+        /* Footer */
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
             border-top: 1px solid var(--border);
-            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-                letter-spacing: 2px;
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .copyright {
+            color: var(--text-tertiary);
+            font-size: 0.8125rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            main {
+                padding-top: 6rem;
             }
 
-            h2 {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .content h2 {
                 font-size: 1.25rem;
             }
 
-            .container {
-                padding: 32px 16px 60px;
+            .footer-links {
+                gap: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <header>
         <div class="header-content">
-            <a href="index.html" class="back-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Back
+            <a href="index.html" class="logo">
+                <div class="logo-mark">G</div>
+                <span class="logo-text">Gymeal</span>
             </a>
-            <span class="header-logo">Gymeal</span>
+            <a href="terms-en.html" class="nav-link">Terms of Service</a>
         </div>
     </header>
 
-    <div class="container">
+    <main>
         <div class="hero">
             <h1>Privacy Policy</h1>
-            <span class="updated">Last updated: December 30, 2025</span>
+            <p class="updated">Last updated: December 30, 2025</p>
         </div>
 
-        <p class="intro">
-            Gymeal is a nutrition and workout tracking application developed by Yohann Félicité ("we", "our", "us"). This privacy policy explains how we collect, use, and protect your personal data.
-        </p>
+        <div class="content">
+            <section>
+                <h2>Introduction</h2>
+                <p>Welcome to Gymeal. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and protect your data when you use our nutrition and fitness tracking application.</p>
 
-        <section>
-            <h2>1. Data We Collect</h2>
+                <div class="info-card highlight">
+                    <p><strong>Your privacy matters.</strong> We collect only the data necessary to provide you with a great experience, and we never sell your personal information to third parties.</p>
+                </div>
+            </section>
 
-            <h3>1.1 Account Data</h3>
-            <ul>
-                <li>Email address (for account creation and authentication)</li>
-                <li>Display name (optional)</li>
-            </ul>
+            <section>
+                <h2>Data We Collect</h2>
 
-            <h3>1.2 Nutrition Data</h3>
-            <ul>
-                <li>Logged meals (foods, quantities, dates)</li>
-                <li>Custom recipes</li>
-                <li>Custom foods created by you</li>
-                <li>Nutritional goals</li>
-            </ul>
-
-            <h3>1.3 Workout Data</h3>
-            <ul>
-                <li>Workout sessions (exercises, sets, reps, weights)</li>
-                <li>Custom workout templates</li>
-                <li>Custom exercises</li>
-            </ul>
-
-            <h3>1.4 Health Data (Apple HealthKit)</h3>
-            <p>If you enable HealthKit sync, we may read and write:</p>
-            <ul>
-                <li>Body weight</li>
-                <li>Body fat percentage</li>
-                <li>Workout data</li>
-                <li>Nutritional data (calories, protein, carbs, fat)</li>
-            </ul>
-            <div class="important">
-                <strong>Important:</strong> This data stays on your device in Apple's Health app and is not sent to our servers.
-            </div>
-
-            <h3>1.5 Voice and Photo Data (Premium Features)</h3>
-            <ul>
-                <li><strong>Voice input:</strong> Your voice recordings are temporarily processed to transcribe your meals. Transcriptions are sent to OpenAI for analysis.</li>
-                <li><strong>Photo analysis:</strong> Photos of your meals are sent to OpenAI to estimate calories. Photos are not stored on our servers.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>2. How We Use Your Data</h2>
-            <p>We use your data only to:</p>
-            <ul>
-                <li>Provide app functionality</li>
-                <li>Sync your data across your devices</li>
-                <li>Improve user experience</li>
-                <li>Send important communications (service changes, security)</li>
-            </ul>
-            <p><strong>We never sell your personal data.</strong></p>
-        </section>
-
-        <section>
-            <h2>3. Third-Party Services</h2>
-
-            <div class="card">
-                <h3>3.1 Firebase (Google)</h3>
-                <p>We use Firebase for:</p>
+                <h3>Account Information</h3>
                 <ul>
-                    <li><strong>Authentication:</strong> Secure account management</li>
-                    <li><strong>Firestore:</strong> Cloud data storage</li>
+                    <li>Email address (for authentication)</li>
+                    <li>Display name (optional)</li>
+                    <li>Profile photo (optional)</li>
                 </ul>
-                <p>Your data is stored on Google's servers, protected by their security infrastructure.<br>
-                <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy →</a></p>
-            </div>
 
-            <div class="card">
-                <h3>3.2 OpenAI</h3>
-                <p>For voice and photo analysis features:</p>
+                <h3>Health & Fitness Data</h3>
                 <ul>
-                    <li>Voice transcriptions and photos are sent to OpenAI APIs</li>
-                    <li>OpenAI processes this data according to their privacy policy</li>
-                    <li>Data is not used to train their models (API usage)</li>
+                    <li>Meals and nutritional information you log</li>
+                    <li>Workout sessions and exercise data</li>
+                    <li>Body measurements (weight, body fat %, etc.)</li>
+                    <li>Nutritional goals and preferences</li>
                 </ul>
-                <p><a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI Privacy Policy →</a></p>
-            </div>
 
-            <div class="card">
-                <h3>3.3 Apple HealthKit</h3>
+                <h3>Apple HealthKit Data</h3>
+                <p>With your explicit permission, we may read and write:</p>
                 <ul>
-                    <li>HealthKit sync is optional and requires your explicit permission</li>
-                    <li>HealthKit data stays on your device</li>
-                    <li>We cannot access your HealthKit data without your permission</li>
+                    <li>Workout data (duration, calories burned, exercise type)</li>
+                    <li>Body measurements (weight, body fat percentage)</li>
                 </ul>
+                <p>HealthKit data is stored locally on your device and synced to our servers only with your consent.</p>
+
+                <h3>Voice & Photo Analysis</h3>
+                <p>Our premium features use AI to help you log meals:</p>
+                <ul>
+                    <li><strong>Voice Input:</strong> Audio recordings are processed by OpenAI to extract meal information, then immediately deleted</li>
+                    <li><strong>Photo Analysis:</strong> Food photos are analyzed by OpenAI's Vision API to estimate calories, then immediately deleted</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>How We Use Your Data</h2>
+                <ul>
+                    <li>Provide and improve our nutrition and fitness tracking services</li>
+                    <li>Sync your data across your devices</li>
+                    <li>Generate personalized insights and recommendations</li>
+                    <li>Send important service notifications</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Third-Party Services</h2>
+                <p>We use the following trusted services:</p>
+
+                <div class="info-card">
+                    <p><strong>Firebase (Google)</strong> — Secure cloud storage and authentication</p>
+                </div>
+                <div class="info-card">
+                    <p><strong>OpenAI</strong> — AI-powered meal analysis (voice and photo features)</p>
+                </div>
+                <div class="info-card">
+                    <p><strong>Apple HealthKit</strong> — Health data synchronization (with your permission)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Data Security</h2>
+                <p>We implement industry-standard security measures:</p>
+                <ul>
+                    <li>All data transmission is encrypted using TLS/SSL</li>
+                    <li>Data at rest is encrypted in Firebase</li>
+                    <li>Authentication is handled securely by Firebase Auth</li>
+                    <li>We regularly review and update our security practices</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li><strong>Access</strong> your personal data at any time within the app</li>
+                    <li><strong>Correct</strong> any inaccurate information</li>
+                    <li><strong>Delete</strong> your account and all associated data</li>
+                    <li><strong>Export</strong> your data (feature coming soon)</li>
+                    <li><strong>Withdraw</strong> consent for optional data processing</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Data Retention</h2>
+                <p>We retain your data for as long as your account is active. When you delete your account:</p>
+                <ul>
+                    <li>All personal data is permanently deleted within 30 days</li>
+                    <li>Anonymized, aggregated data may be retained for analytics</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Children's Privacy</h2>
+                <p>Gymeal is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+            </section>
+
+            <section>
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy in the app and updating the "Last updated" date.</p>
+            </section>
+
+            <div class="contact-card">
+                <h3>Questions?</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <a href="mailto:music.music.music5@icloud.com" class="contact-email">
+                    music.music.music5@icloud.com
+                </a>
             </div>
-        </section>
-
-        <section>
-            <h2>4. Data Security</h2>
-            <p>We protect your data through:</p>
-            <ul>
-                <li>Encryption of data in transit (HTTPS/TLS)</li>
-                <li>Secure authentication via Firebase</li>
-                <li>Storage of sensitive keys in iOS Keychain</li>
-                <li>Data access limited to your account only</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>5. Data Retention</h2>
-            <ul>
-                <li>Your data is retained as long as your account is active</li>
-                <li>You can delete your account at any time from the app</li>
-                <li>Account deletion results in deletion of all your data</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>6. Your Rights</h2>
-            <p>You have the right to:</p>
-            <ul>
-                <li><strong>Access</strong> your personal data</li>
-                <li><strong>Correct</strong> inaccurate data</li>
-                <li><strong>Delete</strong> your account and all your data</li>
-                <li><strong>Export</strong> your data</li>
-                <li><strong>Withdraw</strong> consent for optional features (HealthKit, voice, photo)</li>
-            </ul>
-            <p>To exercise these rights, contact us at: <a href="mailto:feliciteyohann@gmail.com">feliciteyohann@gmail.com</a></p>
-        </section>
-
-        <section>
-            <h2>7. Children</h2>
-            <p>Gymeal is not intended for children under 13. We do not knowingly collect data from children.</p>
-        </section>
-
-        <section>
-            <h2>8. Changes</h2>
-            <p>We may update this policy. Significant changes will be notified in the app.</p>
-        </section>
-
-        <section>
-            <h2>9. Contact</h2>
-            <p><strong>Yohann Félicité</strong><br>
-            Email: <a href="mailto:feliciteyohann@gmail.com">feliciteyohann@gmail.com</a></p>
-        </section>
-
-        <div class="footer">
-            <p>This policy complies with the General Data Protection Regulation (GDPR) and Apple App Store requirements.</p>
-            <p class="copyright">&copy; 2025 Gymeal. All rights reserved.</p>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-en.html">Privacy Policy</a>
+            <a href="terms-en.html">Terms of Service</a>
+            <a href="privacy-fr.html">Français</a>
+        </div>
+        <p class="copyright">© 2025 Gymeal. All rights reserved.</p>
+    </footer>
 </body>
 </html>
