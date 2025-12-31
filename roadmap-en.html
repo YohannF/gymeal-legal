@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap - Gymeal</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --card: #1A1A1C;
+            --accent: #FF4848;
+            --success: #34C759;
+            --warning: #FF9500;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --text-tertiary: #666666;
+            --border: #2A2A2C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .section-title .dot.done { background: var(--success); }
+        .section-title .dot.current { background: var(--warning); }
+        .section-title .dot.planned { background: var(--text-tertiary); }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature.highlight {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, rgba(255, 72, 72, 0.1) 0%, var(--card) 100%);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .status-badge.done {
+            background: rgba(52, 199, 89, 0.2);
+            color: var(--success);
+        }
+
+        .status-badge.current {
+            background: rgba(255, 149, 0, 0.2);
+            color: var(--warning);
+        }
+
+        .lang-toggle {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .lang-toggle a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .lang-toggle a:hover {
+            color: var(--text-primary);
+            background: var(--card);
+        }
+
+        .lang-toggle a.active {
+            color: var(--text-primary);
+            background: var(--card);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9375rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-tertiary);
+            font-size: 0.8125rem;
+        }
+
+        .updated {
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--text-tertiary);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="logo">
+                <div class="logo-mark">G</div>
+                <span class="logo-text">Gymeal</span>
+            </a>
+            <h1>Roadmap</h1>
+            <p class="subtitle">What we're building and what's next</p>
+        </div>
+
+        <!-- Completed -->
+        <div class="section">
+            <div class="section-title">
+                <span class="dot done"></span>
+                Completed
+            </div>
+            <div class="feature-list">
+                <div class="feature">
+                    <span class="feature-icon">🍽️</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Nutrition Tracking</div>
+                        <div class="feature-desc">Log meals, track calories and macros</div>
+                    </div>
+                    <span class="status-badge done">Done</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🏋️</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Workout Tracking</div>
+                        <div class="feature-desc">Log strength sessions with templates</div>
+                    </div>
+                    <span class="status-badge done">Done</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📊</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Barcode Scanner</div>
+                        <div class="feature-desc">Scan products for instant nutrition info</div>
+                    </div>
+                    <span class="status-badge done">Done</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🎤</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Voice Meal Logging</div>
+                        <div class="feature-desc">Log meals by speaking naturally</div>
+                    </div>
+                    <span class="status-badge done">Done</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📷</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Photo Calorie Estimation</div>
+                        <div class="feature-desc">AI-powered calorie estimation from photos</div>
+                    </div>
+                    <span class="status-badge done">Done</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- In Progress -->
+        <div class="section">
+            <div class="section-title">
+                <span class="dot current"></span>
+                In Progress
+            </div>
+            <div class="feature-list">
+                <div class="feature highlight">
+                    <span class="feature-icon">⌚</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Apple Watch App</div>
+                        <div class="feature-desc">Quick logging from your wrist</div>
+                    </div>
+                    <span class="status-badge current">WIP</span>
+                </div>
+                <div class="feature highlight">
+                    <span class="feature-icon">❤️</span>
+                    <div class="feature-content">
+                        <div class="feature-title">HealthKit Sync</div>
+                        <div class="feature-desc">Two-way sync with Apple Health</div>
+                    </div>
+                    <span class="status-badge current">WIP</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Planned -->
+        <div class="section">
+            <div class="section-title">
+                <span class="dot planned"></span>
+                Planned
+            </div>
+            <div class="feature-list">
+                <div class="feature">
+                    <span class="feature-icon">📈</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Advanced Analytics</div>
+                        <div class="feature-desc">Trends, insights, and progress reports</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🎯</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Smart Goals</div>
+                        <div class="feature-desc">AI-adjusted goals based on progress</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🍳</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Meal Planning</div>
+                        <div class="feature-desc">Weekly meal plans with grocery lists</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">👥</span>
+                    <div class="feature-content">
+                        <div class="feature-title">Social Features</div>
+                        <div class="feature-desc">Share progress with friends</div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🤖</span>
+                    <div class="feature-content">
+                        <div class="feature-title">AI Coach</div>
+                        <div class="feature-desc">Personalized nutrition and workout advice</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lang-toggle">
+            <a href="roadmap-en.html" class="active">English</a>
+            <a href="roadmap-fr.html">Français</a>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Legal</a>
+
+        <p class="copyright">© 2025 Gymeal. All rights reserved.</p>
+        <p class="updated">Last updated: December 2025</p>
+    </div>
+</body>
+</html>
